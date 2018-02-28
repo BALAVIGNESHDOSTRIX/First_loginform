@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>DOSTRIX</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div class="loginBox" ng-app="loginapp" ng-controller="pyctrl" >
+			<img src="userimg.png" class="user">
+			<h2>Log In Here</h2>
+			<form>
+				<p>Email</p>
+				<input type="text" name="" placeholder="username" ng-model="username">
+				<p>Password</p>
+				<input type="password" name="" placeholder="••••••" ng-model="password">
+				<button type="submit" ng-click="Green()">Submit</button>
+				
+			</form>
+			<p>{{valid}}</p>
+		</div>
+		
+		
+
+	<script>
+		var app = angular.module("loginapp",[]);
+		app.controller("pyctrl",function($scope){
+		$scope.Username = "juliusbala";
+		$scope.Password = "optimus007";
+		$scope.Green = function()
+		{
+		     $scope.valid = "";
+			if($scope.Username == $scope.username && $scope.Password == $scope.password)
+			{
+			$scope.valid = "successful";
+			}
+			else
+			{
+			$scope.valid = "unsuccessful";
+			}
+		}
+		});
+	</script>
+	</body>
+</html>
